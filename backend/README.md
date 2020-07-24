@@ -1,24 +1,24 @@
 # README
+Current Model Relationships
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User has_many Symptom_Check_In
 
-Things you may want to cover:
+Symptom_Check_In has_many User_Desciption
+Symptom_Check_In belongs_to User
+Symptom_Check_In has_one Body   or Symptom_Check_In has_many Body          Either way they'll have a body object tied to the model
+Symptom_Check_In has_many Current_Symptoms
+Symptom_Check_In has_many Symptoms, through Current_Symptoms
 
-* Ruby version
+User_Description belongs_to Symptom_Check_In
 
-* System dependencies
+Body has_many Body_Parts
+Body has_many Parts, through Body_Parts
 
-* Configuration
+Body_Part belongs_to Body
+Body_Part belongs_to Part
+Body_part has_many Detail_Descriptions
 
-* Database creation
+Part has_many Body_Parts
+Part has_many Bodys, through Body_Parts
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Detail_Description belongs_to Body_Part
