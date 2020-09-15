@@ -5,7 +5,6 @@ function BodyPage() {
   return (
     <div>
         Body page
-        
     </div>
   );
 }
